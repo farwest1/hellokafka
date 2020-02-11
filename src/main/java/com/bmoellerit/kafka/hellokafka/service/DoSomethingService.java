@@ -19,7 +19,7 @@ public class DoSomethingService {
     this.messenger = messenger;
   }
 
-  public void send(String msg){
+  public void send(Object msg){
     messenger.sendMessage(msg);
   }
 }

@@ -1,6 +1,8 @@
 package com.bmoellerit.kafka.hellokafka.controller;
 
+import com.bmoellerit.kafka.hellokafka.dto.OrderCreated;
 import com.bmoellerit.kafka.hellokafka.service.DoSomethingService;
+import java.util.UUID;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +29,6 @@ public class MessageController {
   @RequestMapping(value = "/send")
   public void sendMessage(){
     LOGGER.info("Send Message");
-    doSomethingService.send("Blablabla");
+    doSomethingService.send(OrderCreated.getOrderCreated(UUID.randomUUID(), "Kondome"));
   }
 }

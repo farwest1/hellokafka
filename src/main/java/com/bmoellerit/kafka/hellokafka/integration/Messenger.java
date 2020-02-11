@@ -22,7 +22,7 @@ public class Messenger {
     this.kafkaTemplate = kafkaTemplate;
   }
 
-  public void sendMessage(String msg) {
+  public void sendMessage(Object msg) {
     kafkaTemplate.send("Bernds", msg);
   }
 
