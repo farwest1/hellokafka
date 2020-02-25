@@ -29,6 +29,6 @@ public class MessageController {
   @RequestMapping(value = "/send")
   public void sendMessage(){
     LOGGER.info("Send Message");
-    doSomethingService.send(OrderCreated.getOrderCreated(UUID.randomUUID(), "Kondome"));
+    doSomethingService.send(OrderCreated.getOrderCreated("Kondome"));
   }
 }

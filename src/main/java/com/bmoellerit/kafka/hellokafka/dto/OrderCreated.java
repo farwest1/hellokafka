@@ -7,27 +7,19 @@ import java.util.UUID;
  * <p>
  * Package com.bmoellerit.kafka.hellokafka.dto
  */
-public class OrderCreated {
-  private  UUID id;
+public class OrderCreated extends AbstractMessage {
   private String article;
 
-  public static OrderCreated getOrderCreated(UUID id, String article){
-    return new OrderCreated(id,article);
+  public static OrderCreated getOrderCreated(String article){
+    return new OrderCreated(article);
   }
 
-  public OrderCreated(){
+  public OrderCreated(){}
 
-  }
-
-  public OrderCreated(UUID id, String article) {
-    this.id = id;
+  public OrderCreated(String article) {
+    super();
     this.article = article;
   }
-
-  public UUID getId() {
-    return id;
-  }
-
 
   public String getArticle() {
     return article;
@@ -36,7 +28,7 @@ public class OrderCreated {
   @Override
   public String toString() {
     return "OrderCreated{" +
-        "id=" + id +
+        "messageId=" + getMessageId() +
         ", article='" + article + '\'' +
         '}';
   }
