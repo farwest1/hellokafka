@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.kafka.config.TopicBuilder;
 
 @SpringBootApplication
 public class HellokafkaApplication {
@@ -17,7 +18,8 @@ public class HellokafkaApplication {
 
 	@Bean
 	public NewTopic berndsTopic(){
-	  return new NewTopic("Bernds",2,(short)1);
+
+		return TopicBuilder.name("Bernds").partitions(2).compact().build();
   }
 
 }

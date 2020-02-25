@@ -1,5 +1,6 @@
 package com.bmoellerit.kafka.hellokafka.integration;
 
+import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -23,7 +24,10 @@ public class Messenger {
   }
 
   public void sendMessage(Object msg) {
-    kafkaTemplate.send("Bernds", msg);
+    // by using a random UUID as message key the message is randomly assigned to a partition
+    // TODO: Use properties of the message as Key
+    kafkaTemplate.send("Bernds", UUID.randomUUID().toString(), msg);
+
   }
 
 
