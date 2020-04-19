@@ -29,6 +29,7 @@ public class MessageController {
   @RequestMapping(value = "/send")
   public void sendMessage(){
     LOGGER.info("Send Message");
-    doSomethingService.send(OrderCreated.getOrderCreated("Kondome"));
+    String articleClass = "drogerie";
+    doSomethingService.send(articleClass,OrderCreated.getOrderCreated("Kondome", articleClass));
   }
 }

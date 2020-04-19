@@ -9,20 +9,26 @@ import java.util.UUID;
  */
 public class OrderCreated extends AbstractMessage {
   private String article;
+  private String articleClass;
 
-  public static OrderCreated getOrderCreated(String article){
-    return new OrderCreated(article);
+  public static OrderCreated getOrderCreated(String article, String articleClass){
+    return new OrderCreated(article, articleClass);
   }
 
   public OrderCreated(){}
 
-  public OrderCreated(String article) {
+  public OrderCreated(String article, String articleClass) {
     super();
     this.article = article;
+    this.articleClass = articleClass;
   }
 
   public String getArticle() {
     return article;
+  }
+
+  public String getArticleClass() {
+    return articleClass;
   }
 
   @Override
@@ -30,6 +36,7 @@ public class OrderCreated extends AbstractMessage {
     return "OrderCreated{" +
         "messageId=" + getMessageId() +
         ", article='" + article + '\'' +
+        ", articleClass='" + articleClass + '\'' +
         '}';
   }
 }

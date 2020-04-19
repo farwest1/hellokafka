@@ -22,6 +22,6 @@ class DoSomethingServiceTest {
 
   @Test
   void send() {
-    doSomethingService.send("Bla");
+    doSomethingService.send("Bla","Blabla");
   }
 }
