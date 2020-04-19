@@ -9,16 +9,16 @@ import org.slf4j.LoggerFactory;
  * <p>
  * Package com.bmoellerit.kafka.hellokafka.dto
  */
-public abstract class AbstractMessage {
-  private static final Logger LOGGER = LoggerFactory.getLogger(AbstractMessage.class);
+public abstract class DomainEvent {
+  private static final Logger LOGGER = LoggerFactory.getLogger(DomainEvent.class);
   private UUID messageId;
   private UUID correlationId;
 
-  public AbstractMessage() {
+  public DomainEvent() {
     this(UUID.randomUUID(),UUID.randomUUID());
   }
 
-  public AbstractMessage(UUID messageId, UUID correlationId) {
+  public DomainEvent(UUID messageId, UUID correlationId) {
     this.messageId = messageId;
     this.correlationId = correlationId;
     LOGGER.debug("AbstractMessage created:" + this.toString());

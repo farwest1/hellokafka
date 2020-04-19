@@ -1,13 +1,11 @@
 package com.bmoellerit.kafka.hellokafka.dto;
 
-import java.util.UUID;
-
 /**
  * Created by Bernd on 08.02.2020.
  * <p>
  * Package com.bmoellerit.kafka.hellokafka.dto
  */
-public class OrderCreated extends AbstractMessage {
+public class OrderCreated extends DomainEvent {
   private String article;
   private String articleClass;
 

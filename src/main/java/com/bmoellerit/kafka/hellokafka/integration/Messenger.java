@@ -24,8 +24,7 @@ public class Messenger {
   }
 
   public void sendMessage(String key, Object msg) {
-    // by using a random UUID as message key the message is randomly assigned to a partition
-    // TODO: Use properties of the message as Key
+
     kafkaTemplate.send("Bernds", key, msg);
 
   }
